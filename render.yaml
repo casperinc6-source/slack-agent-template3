@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: campos-technologies-micro-offers
+    env: node
+    plan: free
+    buildCommand: ""
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: APP_SECRET
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: PAYMENT_WEBHOOK_SECRET
+        sync: false
+      - key: OFFER_INTERVAL_HOURS
+        value: 4

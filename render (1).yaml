@@ -1,0 +1,21 @@
+# Exported from Render on 2026-05-22T13:18:08Z
+version: "1"
+services:
+- type: web
+  name: campos-technologies-micro-offers
+  runtime: node
+  repo: https://github.com/casperinc6-source/slack-agent-live
+  plan: free
+  envVars:
+  - key: ADMIN_PASSWORD
+    sync: false
+  - key: APP_SECRET
+    sync: false
+  - key: OFFER_INTERVAL_HOURS
+    sync: false
+  - key: NODE_VERSION
+    sync: false
+  region: oregon
+  startCommand: node server.js
+  healthCheckPath: /health
+  autoDeployTrigger: commit
